@@ -7,16 +7,10 @@ module CnTelecomeSeg
     end
     
     def segment(phrase)
-      logger "get into segment"
       api_url = 'http://125.64.11.43:8080/udt-see/StartServiceServlet'
-      logger "start to init params"
       params = init_params
-      logger "get params"
-      logger params
       params['params']['DivideText'] = phrase
-      logger "start to post"
       response = RestClient.post api_url, encode_json(params), :content_type => :json, :accept => :json
-      logger "start to decode"
       decoded_response = decode_json(response.to_s)
       decoded_response
     end
