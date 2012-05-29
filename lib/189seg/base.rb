@@ -11,8 +11,7 @@ module CnTelecomeSeg
       api_url = 'http://125.64.11.43:8080/udt-see/StartServiceServlet'
       params = init_params
       params['DivideText'] = phrase
-      res = Net::HTTP.post_form(URI.parse(api_url), params)
-      puts res.body
+      res = Net::HTTP.post_form(URI.parse(api_url), encode_json(params))
       res.body
     end
     
