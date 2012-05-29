@@ -53,6 +53,7 @@ module CnTelecomeSeg
         params['Key']             = encrypt(timestamp+@apid, @key)
         params['ProductID']       = @product_id
         params['TimeStamp']       = timestamp
+        params['ServiceID']       = '2011110214151'
         params
       end
   end
