@@ -19,11 +19,11 @@ Or install it yourself as:
 
 ## Usage
 
-'''ruby
+```ruby
 phrase = params[:phrase]
 client = CnTelecomeSeg::Base.new(YOUR_AP_ID, YOUR_KEY, YOUR_PRODUCT_ID)
 segments = client.segment(phrase)
-'''
+```
 
 ## Contributing
 
