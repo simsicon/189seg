@@ -13,5 +13,5 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "189seg"
   gem.require_paths = ["lib"]
-  gem.version       = VERSION
+  gem.version       = CnTelecomeSeg::VERSION
 end
