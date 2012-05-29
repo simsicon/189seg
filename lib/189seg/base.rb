@@ -13,7 +13,7 @@ module CnTelecomeSeg
       params = init_params
       logger "get params"
       logger params
-      params['DivideText'] = phrase
+      params['params']['DivideText'] = phrase
       logger "start to post"
       response = RestClient.post api_url, encode_json(params), :content_type => :json, :accept => :json
       logger "start to decode"
@@ -46,14 +46,15 @@ module CnTelecomeSeg
       end
 
       def init_params
-        timestamp                 = Time.now.strftime('%Y%m%d%H%M%S')
+        timestamp                           = Time.now.strftime('%Y%m%d%H%M%S')
 
-        params                    = {}
-        params['APID']            = @apid
-        params['Key']             = encrypt(timestamp+@apid, @key)
-        params['ProductID']       = @product_id
-        params['TimeStamp']       = timestamp
-        params['ServiceID']       = '2011110214151'
+        params                              = {}
+        params['params']                    = {}
+        params['params']['APID']            = @apid
+        params['params']['Key']             = encrypt(timestamp+@apid, @key)
+        params['params']['ProductID']       = @product_id
+        params['params']['TimeStamp']       = timestamp
+        params['serviceId']                 = '2011110214151'
         params
       end
   end
