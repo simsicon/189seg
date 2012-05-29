@@ -1,6 +1,7 @@
 # 189seg
 
-TODO: Write a gem description
+This is a gem using 189works's Chinese segment API service to provide a remote segment way. And it's super easy to use it.
+
 
 ## Installation
 
@@ -18,7 +19,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+'''ruby
+phrase = params[:phrase]
+client = CnTelecomeSeg::Base.new(YOUR_AP_ID, YOUR_KEY, YOUR_PRODUCT_ID)
+segments = client.segment(phrase)
+'''
 
 ## Contributing
 
