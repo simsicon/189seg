@@ -15,8 +15,10 @@ module CnTelecomeSeg
       logger params
       params['DivideText'] = phrase
       logger "start to post"
-      res = Net::HTTP.post_form(URI.parse(api_url), encode_json(params))
-      res.body
+      response = RestClient.post api_url, encode_json(params), :content_type => :json, :accept => :json
+      logger "start to decode"
+      decoded_response = decode_json(response.to_s)
+      decoded_response
     end
     
     private
