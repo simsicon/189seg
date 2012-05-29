@@ -1,5 +1,5 @@
 require "189seg/version"
 
-module 189seg
+module CnTelecomeSeg
   # Your code goes here...
 end

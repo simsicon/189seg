@@ -1,4 +1,4 @@
-module 189seg
+module CnTelecomeSeg
   class Base
     def initialize(apid, key, product_id)
       @apid = apid

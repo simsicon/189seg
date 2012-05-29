@@ -1,3 +1,3 @@
-module 189seg
+module CnTelecomeSeg
   VERSION = "0.0.1"
 end
