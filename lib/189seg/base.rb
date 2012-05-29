@@ -7,7 +7,7 @@ module CnTelecomeSeg
     end
     
     def segment(phrase)
-      logger.info "get into segment"
+      logger "get into segment"
       api_url = 'http://125.64.11.43:8080/udt-see/StartServiceServlet'
       logger "start to init params"
       params = init_params
