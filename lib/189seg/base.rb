@@ -9,17 +9,21 @@ module CnTelecomeSeg
     def segment(phrase)
       logger.info "get into segment"
       api_url = 'http://125.64.11.43:8080/udt-see/StartServiceServlet'
-      logger.info "start to init params"
+      logger "start to init params"
       params = init_params
-      logger.info "get params"
-      logger.info params
+      logger "get params"
+      logger params
       params['DivideText'] = phrase
-      logger.info "start to post"
+      logger "start to post"
       res = Net::HTTP.post_form(URI.parse(api_url), encode_json(params))
       res.body
     end
     
     private
+      def logger(msg)
+        puts msg.inspect
+      end
+    
       def encrypt(message, key)
         key = Base64.decode64(key)
         cipher = OpenSSL::Cipher::Cipher.new("des-ede3")
