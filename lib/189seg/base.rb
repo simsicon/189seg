@@ -7,10 +7,14 @@ module CnTelecomeSeg
     end
     
     def segment(phrase)
-      
+      logger.info "get into segment"
       api_url = 'http://125.64.11.43:8080/udt-see/StartServiceServlet'
+      logger.info "start to init params"
       params = init_params
+      logger.info "get params"
+      logger.info params
       params['DivideText'] = phrase
+      logger.info "start to post"
       res = Net::HTTP.post_form(URI.parse(api_url), encode_json(params))
       res.body
     end
